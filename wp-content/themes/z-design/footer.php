@@ -1,36 +1,25 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package z-design
- */
+            <footer class="footer none">
+                <div class="footer__copyright">
+                    <div class="copyright__name">
+                        <span>Z-Design Pro</span> <span>|</span> <span>Vision & Creative © 2019</span>
+                    </div>
+                    <div class="copyright__fb">
+                        <a href="#">
+                            <img src="<?php bloginfo('template_directory') ?>/img/svg/fb.svg" alt="fb">
+                        </a>
+                    </div>
+                </div>
 
-?>
-
-	</div><!-- #content -->
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'z-design' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'z-design' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'z-design' ), 'z-design', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
+                <div class="footer__wrapper">
+                    <div class="footer__go_up">
+                        <a href="#"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <?php wp_footer(); ?>
 
 </body>
+
 </html>
