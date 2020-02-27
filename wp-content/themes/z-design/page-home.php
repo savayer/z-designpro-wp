@@ -27,8 +27,11 @@ get_header();
                     {{ projectName }}
                 </span>
                 <span class="work__description">
-                    <div v-if="false" class="work__mobile-view-site">
-                        <a href="#" class="button button--mobile">
+                    {{ projectDescription }}
+                </span>
+                <span class="work__description">
+                    <div v-if="goToSite" class="work__mobile-view-site">
+                        <a :href="goToSite" class="button button--mobile">
                             <span class="button__text">
                                 Go to site
                             </span>
@@ -50,8 +53,8 @@ get_header();
                     </div>
                 </span>
             </div>
-            <div class="work__view_site">
-                <a href="#" class="button button--white">
+            <div class="work__view_site" v-if="goToSite">
+                <a :href="goToSite" class="button button--white">
                     <span class="button__text">
                         Go to site
                     </span>

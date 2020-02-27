@@ -182,6 +182,7 @@ function z_scripts() {
 				$works[] = array(
 					'id' => $id,
 					'name' => $work->post_title,
+					'site' => get_field('go_to_site_link', $id),
 					'category' => 'w-'.get_the_category($id)[0]->slug,
 					'description' => get_field('work_description', $id),
 					'image' => get_the_post_thumbnail_url($id),

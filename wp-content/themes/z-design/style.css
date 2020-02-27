@@ -2609,7 +2609,8 @@ h3 {
 }
 
 .grid_wrapper {
-    overflow: hidden
+    overflow: hidden;
+    min-height: 100vh;
 }
 
 .grid_works {
