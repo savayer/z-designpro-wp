@@ -124,66 +124,36 @@
             <div class="modal__overlay" style="transform: translateX(125%);">
                 <div class="modal__overlay_body">
                     <div class="modal__team_content">
-                        <div class="modal__team_title">
-                            Our Clients:
-                            <!-- Team -->
-                        </div>
-                        <div class="modal__team_hr"></div>
-                        <div class="modal__logos">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/1.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/2.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/3.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/4.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/5.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/6.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/7.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/8.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/9.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/10.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/11.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/12.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/13.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/14.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/15.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/16.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/17.svg" alt="">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/logos/18.svg" alt="">
-                        </div>
-                        <!-- <div class="modal__employees employees">
-                    <div class="employee">
-                        <figure class="employee__photo">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/employee1.png" alt="">
-                        </figure>
-                        <div class="employee__name">
-                            Vlad Rozan
-                        </div>
-                        <div class="employee__post">
-                            Product Management
-                        </div>
-                    </div>
-                    <div class="employee">
-                        <figure class="employee__photo">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/employee2.png" alt="">
-                        </figure>
-                        <div class="employee__name">
-                            Yaniv Levi
-                        </div>
-                        <div class="employee__post">
-                            Web Development
-                        </div>
-                    </div>
-                    <div class="employee">
-                        <figure class="employee__photo">
-                            <img src="<?php bloginfo('template_directory') ?>/img/about/employee3.png" alt="">
-                        </figure>
-                        <div class="employee__name">
-                            Adi Wais
-                        </div>
-                        <div class="employee__post">
-                            SEO Optimization
-                        </div>
-                    </div>
-                </div> -->
+                        <?php if (get_field('type_about_content', 11) === 'Clients') : ?>
+                            <div class="modal__team_title">Our Clients:</div>
+                            <div class="modal__team_hr"></div>
+                            <div class="modal__logos">
+                                <?php                                
+                                    $i = 0;
+                                    foreach(get_field('clients', 11) as $img) : 
+                                        $i++;  ?>
+                                        <img src="<?php echo $img['client_image']; ?>" alt="client-<?php echo $i; ?>">
+                                <?php endforeach; ?>
+                            </div>
+                        <?php else : ?>
+                            <div class="modal__team_title">Our Team:</div>
+                            <div class="modal__team_hr"></div>
+                            <div class="modal__employees employees">
+                                <?php foreach(get_field('team', 11) as $employee) : ?>
+                                    <div class="employee">
+                                        <figure class="employee__photo">
+                                            <img src="<?php echo $employee['employee_image']; ?>" alt="<?php echo $employee['employee_name']; ?>">
+                                        </figure>
+                                        <div class="employee__name">
+                                            <?php echo $employee['employee_name']; ?>
+                                        </div>
+                                        <div class="employee__post">
+                                        <?php echo $employee['employee_post']; ?>
+                                        </div>
+                                    </div>                                        
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>                                                
                     </div>
                 </div>
             </div>
@@ -201,43 +171,36 @@
                     <div class="modal__content modal__content--about">
                         <img src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
                         <div class="about__content">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero earum, laboriosam ea error mollitia labore minus, voluptatum beatae ipsum doloremque omnis vitae est, atque autem. Quasi tempore magnam minima quae?
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doVitem quid quiaspe lescimu sapistis voluptatat.
-                            </p>
-                            <p>
-                                Ist, quaeped itiatios cum il eum estor mi, ide dolor aut et dunto eri dolorerum facilib eaquiam, omnihitatio cullatiis et peribus eaquisque prorepudae lat lis aut eos quisit aut acest veritis urera simoluptatis pelis mod ut quos eturept asitecus aut as magniet odiorehenis alicabo
-                            </p>
+                            <?php echo get_post_field('post_content', 11); ?>
                         </div>
                         <div class="about__buttons">
                             <a href="#" class="about__button button button--red">
                                 <span class="button__text">
-                            Recommendations
-                        </span>
+                                    Recommendations
+                                </span>
                                 <span class="button__container">
-                            <span class="button__arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 27 18">
-                                    <g>
-                                        <path d="M17.592.034L16.03 1.6l6.35 6.368H-.085v2.214H22.38l-6.35 6.368 1.56 1.565 9.02-9.04z" />
-                                    </g>
-                                </svg>
-                            </span>
+                                <span class="button__arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 27 18">
+                                        <g>
+                                            <path d="M17.592.034L16.03 1.6l6.35 6.368H-.085v2.214H22.38l-6.35 6.368 1.56 1.565 9.02-9.04z" />
+                                        </g>
+                                    </svg>
+                                </span>
                                 </span>
                             </a>
 
                             <a href="#" class="about__button button button--blue">
                                 <span class="button__text">
-                            CV
-                        </span>
+                                    CV
+                                </span>
                                 <span class="button__container">
-                            <span class="button__arrow">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 27 18">
-                                    <g>
-                                        <path d="M17.592.034L16.03 1.6l6.35 6.368H-.085v2.214H22.38l-6.35 6.368 1.56 1.565 9.02-9.04z" />
-                                    </g>
-                                </svg>
-                            </span>
+                                    <span class="button__arrow">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="18" viewBox="0 0 27 18">
+                                            <g>
+                                                <path d="M17.592.034L16.03 1.6l6.35 6.368H-.085v2.214H22.38l-6.35 6.368 1.56 1.565 9.02-9.04z" />
+                                            </g>
+                                        </svg>
+                                    </span>
                                 </span>
                             </a>
                         </div>
