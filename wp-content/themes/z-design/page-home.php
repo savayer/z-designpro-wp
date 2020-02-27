@@ -116,10 +116,10 @@ get_header();
         </div>
         <div class="work__body" :class="{'hide': hiddenBody}">
             <div v-for="item, index in projectMedia" :key="index">
-                <iframe v-if="item.type" :src="item.src" frameborder="0"
+                <img v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                <iframe v-if="item.youtube_link" :src="item.youtube_link" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
-                <img v-else v-lazy="item" lazy="loading" :alt="`${projectName} screen ${index+1}`">
             </div>
 
             <div v-for="objMediaInfo, index in projectMediaAll" :key="index">

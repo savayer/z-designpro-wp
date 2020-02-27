@@ -145,6 +145,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 /************************************************************ */
 
+function dd($data) {
+	echo '<pre style="direction:ltr">';
+	die(print_r($data));
+	echo '</pre>';
+}
+
 function z_scripts() {
 	wp_enqueue_style( 'style-main', get_stylesheet_uri() );
 	
@@ -157,9 +163,34 @@ function z_scripts() {
 		$template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
 		if ($template_name == 'page-home.php') {			   
 			wp_enqueue_script( 'indexjs');
+			$categories = get_categories( array(
+				'taxonomy'     => 'category',
+				'type'         => 'portfolio',
+				'orderby'      => 'term_id',
+				'order'        => 'ASC',
+			));
+			
+			$prependWorks = get_posts( array(
+				'numberposts' => -1,
+				'orderby'     => 'date',
+				'order'       => 'DESC',				
+				'post_type'   => 'portfolio',
+			));
+			$works = [];
+			foreach ($prependWorks as $work) {
+				$id = $work->ID;
+				$works[] = array(
+					'id' => $id,
+					'name' => $work->post_title,
+					'category' => 'w-'.get_the_category($id)[0]->slug,
+					'description' => get_field('work_description', $id),
+					'image' => get_the_post_thumbnail_url($id),
+					'media' => get_field('work_images', $id),
+				);
+			}
 			$data = array(
-				'name'            => get_stylesheet_directory_uri(),
-				'pleaseWaitLabel' => __( 'Please wait...', 'default' )
+				'cats' => $categories,
+				'works' => $works
 			);
 			wp_localize_script( 'indexjs', 'PHP_DATA', $data );
 			wp_enqueue_script( 'script-vendor');
@@ -184,6 +215,7 @@ function portfolio_post_type() {
 		'public' => true,
 		'label' => 'Portfolio',
 		'taxonomies' => array('category' ),
+		'supports' => array( 'title', 'editor', 'author', 'thumbnail' )
 	);
 	register_post_type( 'portfolio', $args );
 }

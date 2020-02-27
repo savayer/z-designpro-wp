@@ -2365,6 +2365,7 @@ h3 {
 }
 
 .nav__toggle_lang {
+    -webkit-tap-highlight-color: transparent;
     background: #000;
     width: 2.5em;
     height: 2.5em;
@@ -2492,7 +2493,8 @@ h3 {
 .menu_wrapper__close {
     cursor: pointer;
     display: inline-block;
-    margin-left: 3.5rem
+    margin-left: 3.5rem;
+    max-height: 53px
 }
 
 .menu {
@@ -2545,7 +2547,7 @@ h3 {
 .menu__link svg {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 2.2rem;
+    margin-right: 1.5rem;
     width: 28px;
     height: 27px
 }
@@ -2555,8 +2557,6 @@ h3 {
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -.9375rem;
-    margin-right: -.9375rem;
     -webkit-box-pack: center;
     justify-content: center;
     padding: 1.5rem 5.5rem;
@@ -2582,7 +2582,6 @@ h3 {
     flex-wrap: nowrap;
     white-space: nowrap;
     padding: 0 1rem .75rem;
-    width: 101%;
     -webkit-box-pack: start;
     justify-content: flex-start
 }
@@ -3429,7 +3428,7 @@ img[lazy=loading] {
 
 .contact__form {
     width: 70%;
-    margin: 2rem auto 0
+    margin: 3rem auto 0
 }
 
 .contact__form input,
@@ -3437,9 +3436,9 @@ img[lazy=loading] {
     width: 100%;
     border: none;
     border-bottom: 2px solid #1e0547;
-    padding: .5rem 0;
-    margin: 1.25rem 0;
+    padding: .75rem 0;
     outline: 0;
+    font-family: Futura, sans-serif;
     color: #1e0547
 }
 
@@ -3512,6 +3511,26 @@ img[lazy=loading] {
     transform: translateX(5px)
 }
 
+.contact__group {
+    margin: 2rem 0;
+    position: relative
+}
+
+.contact__group span {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: .75em;
+    color: #211f47;
+    -webkit-transition: .3s;
+    transition: .3s
+}
+
+.contact__group span.label-active {
+    top: -1em;
+    font-size: .75em
+}
+
 .contact__message {
     margin-top: .75rem;
     color: #fc5656;
@@ -3522,6 +3541,12 @@ img[lazy=loading] {
 }
 
 .contact__phone {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
     margin-top: 2rem;
     text-align: center;
     font-family: 'Open Sans', sans-serif
@@ -3537,12 +3562,26 @@ img[lazy=loading] {
     text-decoration: underline
 }
 
+.contact__phone a:nth-child(2) {
+    margin-left: 1.25rem;
+    padding-top: 4px
+}
+
+.contact__phone a img {
+    max-width: 32px
+}
+
 .contact__phone a span {
     display: inline-block;
     vertical-align: middle;
     background: url(img/svg/phone.svg) center/contain no-repeat;
     width: 20px;
     height: 20px
+}
+
+.dropline {
+    margin: auto;
+    opacity: 0
 }
 
 .modal {
@@ -3560,8 +3599,35 @@ img[lazy=loading] {
     z-index: 1000
 }
 
+.modal.showed .contact__group {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    overflow: initial;
+    max-height: 100%
+}
+
+.modal.showed .contact__group--1 {
+    -webkit-transition: .7s .2s;
+    transition: .7s .2s
+}
+
+.modal.showed .contact__group--2 {
+    -webkit-transition: .9s .2s;
+    transition: .9s .2s
+}
+
+.modal.showed .contact__group--3 {
+    -webkit-transition: 1.2s .2s;
+    transition: 1.2s .2s
+}
+
+.modal.showed .contact__group--4 {
+    -webkit-transition: 1.5s .2s;
+    transition: 1.5s .2s
+}
+
 .modal.showed .contact__button,
-.modal.showed .contact__group,
 .modal.showed .contact__phone {
     padding-top: 0;
     opacity: 1;
@@ -3603,6 +3669,12 @@ img[lazy=loading] {
     transition: .8s 1.8s
 }
 
+.modal.showed .dropline {
+    opacity: 1;
+    -webkit-transition: 1s 1s;
+    transition: 1s 1s
+}
+
 .modal.showed .modal__logos {
     opacity: 1;
     -webkit-transition: .5s 1s;
@@ -3620,7 +3692,7 @@ img[lazy=loading] {
     background: rgba(0, 0, 0, .8)
 }
 
-.modal__team {
+.modal__overlay_body {
     width: 60%;
     height: 100vh;
     display: -webkit-box;
@@ -3630,7 +3702,7 @@ img[lazy=loading] {
     overflow: -moz-scrollbars-none
 }
 
-.modal__team::-webkit-scrollbar {
+.modal__overlay_body::-webkit-scrollbar {
     width: 0
 }
 
@@ -3763,7 +3835,7 @@ img[lazy=loading] {
 }
 
 .modal__header {
-    min-height: 80px;
+    height: 80px;
     background-color: #467aff;
     text-align: right;
     padding: .75rem 2rem;
@@ -3886,6 +3958,7 @@ img[lazy=loading] {
 .footer {
     background: #000;
     position: relative;
+    z-index: 100;
     overflow: hidden;
     min-height: 60px;
     display: -webkit-box;
@@ -3904,6 +3977,18 @@ img[lazy=loading] {
     opacity: 0
 }
 
+.footer__wrapper {
+    position: absolute;
+    overflow: hidden;
+    max-width: 50px;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1
+}
+
 .footer__go_up a {
     display: block;
     width: 30px;
@@ -3913,6 +3998,7 @@ img[lazy=loading] {
     position: absolute;
     bottom: -35px;
     right: 20px;
+    z-index: 2;
     cursor: pointer
 }
 
@@ -3953,22 +4039,21 @@ img[lazy=loading] {
     text-align: center
 }
 
-.footer__wrapper {
-    position: absolute;
-    overflow: hidden;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    bottom: 0
+.footer__social img {
+    max-width: 30px
+}
+
+.footer__social a {
+    display: inline-block;
+    margin-left: .75rem
 }
 
 @media (min-width:501px) {
     body:not(.page_contact) .contact__group {
         max-height: 81px;
         overflow: hidden;
-        padding-top: 54px;
+        -webkit-transform: translateY(54px);
+        transform: translateY(54px);
         opacity: 0
     }
     body:not(.page_contact) .contact__button {
@@ -4060,7 +4145,7 @@ img[lazy=loading] {
 }
 
 @media (max-width:1600px) {
-    .modal__team {
+    .modal__overlay_body {
         width: 65%
     }
     .modal__form {
@@ -4094,7 +4179,7 @@ img[lazy=loading] {
 }
 
 @media (max-width:1350px) {
-    .modal__team {
+    .modal__overlay_body {
         width: 55%
     }
     .modal__team_content {
@@ -4126,6 +4211,9 @@ img[lazy=loading] {
     }
     .services__item.service {
         width: calc(50% - 1.875rem)
+    }
+    .modal--contact .modal__overlay_body {
+        width: 50%
     }
     .contact__form {
         width: 75%
@@ -4190,11 +4278,17 @@ img[lazy=loading] {
     .process__wrapper {
         max-width: 95%
     }
+    .modal--contact .modal__overlay_body {
+        width: 40%
+    }
+    .dropline {
+        width: 90%
+    }
     .modal.modal--contact .modal__form {
         width: 60%
     }
     .modal__form,
-    .modal__team {
+    .modal__overlay_body {
         width: 50%
     }
 }
@@ -4259,7 +4353,7 @@ img[lazy=loading] {
     .process__item.p {
         width: calc(83.33333% - 1.875rem)
     }
-    .modal__team {
+    .modal__overlay_body {
         display: none
     }
     .about__team {
@@ -4312,6 +4406,11 @@ img[lazy=loading] {
     .services {
         margin-top: calc(135px + 1.325rem)
     }
+    .services__wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column
+    }
     .services__item.service {
         width: calc(100% - 1.875rem)
     }
@@ -4319,9 +4418,6 @@ img[lazy=loading] {
         margin-top: calc(135px + 1.325rem)
     }
     .blog__wrapper {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        flex-direction: row;
         height: auto!important
     }
     .blog__post.post {
@@ -4366,7 +4462,10 @@ img[lazy=loading] {
         -webkit-box-direction: normal;
         flex-direction: column
     }
-    .copyright__fb {
+    .copyright__name {
+        margin-right: 0
+    }
+    .footer__social {
         margin-top: .75rem
     }
 }
@@ -4590,16 +4689,16 @@ img[lazy=loading] {
     .copyright__name span:nth-child(2) {
         display: none
     }
-    .copyright__fb {
+    .footer__social {
         position: absolute;
-        top: -20px;
+        top: -16px;
         margin-top: 0;
         left: 0;
         right: 0;
         text-align: center;
         z-index: 1000
     }
-    .copyright__fb img {
+    .footer__social img {
         width: 40px
     }
 }
@@ -4763,7 +4862,20 @@ img[lazy=loading] {
     }
 }
 
+@media (max-width:380px) {
+    .nav_works__item {
+        margin: .4em .25em
+    }
+}
+
 @media (max-width:360px) {
+    .nav_works__item {
+        margin: .4em .2em;
+        padding: .4em .45em
+    }
+    .footer__wrapper {
+        max-width: 37px
+    }
     .footer__go_up a {
         right: 7px
     }
@@ -4779,10 +4891,6 @@ img[lazy=loading] {
     }
     .logo img {
         width: 190px
-    }
-    .nav_works__item {
-        margin: .4em .3em;
-        padding: .4em .5em
     }
     .work__name {
         font-size: 1.125em
@@ -4810,5 +4918,14 @@ img[lazy=loading] {
         margin: .4em .3em;
         padding: .4em .45em;
         font-size: .95em
+    }
+    .footer {
+        padding-bottom: 50px
+    }
+    .footer__wrapper {
+        max-width: 100%
+    }
+    .footer__go_up a {
+        right: 20px
     }
 }
