@@ -66,14 +66,11 @@
 
                     <div class="contact">
                         <?php echo do_shortcode('[contact-form-7 id="131" title="Contact form 1"]'); ?>
-                        <div class="contact__message">
-                            Message sent successfully, Will get back to you soon.
-                        </div>
                         <div class="contact__phone">
-                            <a href="tel:+972-54-631-99-77">+972-54-631-99-77
-                        <span></span>
-                    </a>
-                            <a href="#">
+                            <a href="tel:<?php the_field('phone_number', 7); ?>"><?php the_field('phone_number', 7); ?>
+                                <span></span>
+                            </a>
+                            <a target="_blank" href="https://api.whatsapp.com/send?text=<?php echo get_field('whatsapp_text', 7); ?>&phone=<?php echo get_field('whatsapp_number', 7); ?>">
                                 <img src="<?php bloginfo('template_directory') ?>/img/svg/wapp-white-phone.svg" alt="">
                             </a>
                         </div>

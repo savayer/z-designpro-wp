@@ -206,10 +206,7 @@ function z_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'z_scripts' );
 
-
-
-	/************************************************************ */
-
+/************************************************************ */
 
 include_once('acf-repeater/acf-repeater.php');
 
