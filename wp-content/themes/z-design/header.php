@@ -28,24 +28,28 @@
     <?php wp_head(); ?>
 </head>
 
-<body class="overflow-hidden">
-    <div class="preloader">
-        <div class="lds-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
-    <div class="hidden">
+<body class="<?php if (is_page_template('page-home.php')) echo 'overflow-hidden'; ?>
+<?php if (is_page_template('page-contact.php')) echo 'page_contact'; ?>
+">
+    <?php if (is_page_template('page-home.php')) : ?>
+        <div class="preloader">
+            <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>    
+    <div class="hidden" style="display:none">
+    <?php endif; ?>
         <div class="overlay"></div>
         <div class="modal modal--contact">
             <div class="modal__overlay" style="transform: translateX(125%);">
@@ -132,7 +136,7 @@
                             <?php echo get_post_field('post_content', 11); ?>
                         </div>
                         <div class="about__buttons">
-                            <a href="#" class="about__button button button--red">
+                            <a href="<?php the_field('recommendations_link', 11); ?>" target="_blank" class="about__button button button--red">
                                 <span class="button__text">
                                     Recommendations
                                 </span>
@@ -147,7 +151,7 @@
                                 </span>
                             </a>
 
-                            <a href="#" class="about__button button button--blue">
+                            <a href="<?php the_field('cv_link', 11); ?>" target="_blank" class="about__button button button--blue">
                                 <span class="button__text">
                                     CV
                                 </span>
@@ -162,47 +166,6 @@
                                 </span>
                             </a>
                         </div>
-
-                        <!-- <div class="about__team">
-                    <div class="about__title">
-                        Our team:
-                    </div>
-                    <div class="employees">
-                        <div class="employee">
-                            <figure class="employee__photo">
-                                <img src="<?php bloginfo('template_directory') ?>/img/about/employee1.png" alt="">
-                            </figure>
-                            <div class="employee__name">
-                                Vlad Rozan
-                            </div>
-                            <div class="employee__post">
-                                Product Management
-                            </div>
-                        </div>
-                        <div class="employee">
-                            <figure class="employee__photo">
-                                <img src="<?php bloginfo('template_directory') ?>/img/about/employee2.png" alt="">
-                            </figure>
-                            <div class="employee__name">
-                                Yaniv Levi
-                            </div>
-                            <div class="employee__post">
-                                Web Development
-                            </div>
-                        </div>
-                        <div class="employee">
-                            <figure class="employee__photo">
-                                <img src="<?php bloginfo('template_directory') ?>/img/about/employee3.png" alt="">
-                            </figure>
-                            <div class="employee__name">
-                                Adi Wais
-                            </div>
-                            <div class="employee__post">
-                                SEO Optimization
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                     </div>
                 </div>
             </div>

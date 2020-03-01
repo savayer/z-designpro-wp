@@ -27,9 +27,6 @@ get_header();
                     {{ projectName }}
                 </span>
                 <span class="work__description">
-                    {{ projectDescription }}
-                </span>
-                <span class="work__description">
                     <div v-if="goToSite" class="work__mobile-view-site">
                         <a :href="goToSite" class="button button--mobile">
                             <span class="button__text">
@@ -48,9 +45,9 @@ get_header();
                             </span>
                         </a>
                     </div>
-                    <div v-else>
+                    <span v-else>
                         {{ projectDescription }}
-                    </div>
+                    </span>
                 </span>
             </div>
             <div class="work__view_site" v-if="goToSite">
@@ -127,12 +124,13 @@ get_header();
 
             <div v-for="objMediaInfo, index in projectMediaAll" :key="index">
                 <div class="work__project" :data-name="objMediaInfo.name"
+                :data-site="objMediaInfo.site"
                     :data-description="objMediaInfo.description">
                     <div v-for="item, i in objMediaInfo.media" :key="i">
-                        <iframe v-if="item.type" :src="item.src" frameborder="0"
+                        <img v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                        <iframe v-if="item.youtube_link" :src="item.youtube_link" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                        <img v-else v-lazy="item" :alt="`${projectName} screen ${index+1}`">
                     </div>
                 </div>
             </div>

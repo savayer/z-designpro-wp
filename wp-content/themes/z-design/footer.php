@@ -1,7 +1,7 @@
             <footer class="footer none">
                 <div class="footer__copyright">
                     <div class="copyright__name">
-                        <span>Z-Design Pro</span> <span>|</span> <span>Vision & Creative © 2019</span>
+                        <?php the_field('copyright', 7); ?>
                     </div>
                     <div class="footer__social">
                         <a target="_blank" href="<?php echo get_field('facebook_link', 7); ?>">
@@ -20,9 +20,10 @@
                 </div>
             </footer>
         </div>
-    </div>
+    <?php if (is_page_template('page-home.php')) : ?>
+        </div> <!-- .hidden -->
+    <?php endif; ?>    
     <?php wp_footer(); ?>
-
 </body>
 
 </html>
