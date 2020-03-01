@@ -10,13 +10,13 @@ get_header();
         <h1 class="services__title title">Our services:</h1>
         <div class="services__wrapper">
             <?php 
-            $i = 0;
-            if ($i > 0) {
-                $animationDelay = $i * 50;
-            } else {
-                $animationDelay = 0;
-            }
+            $i = 0;            
             foreach (get_field('services') as $service) :
+                if ($i > 0) {
+                    $animationDelay = $i * 50;
+                } else {
+                    $animationDelay = 0;
+                }
             ?>
                 <div class="services__item service" data-aos="fade-up-mini" data-aos-delay="<?php echo $animationDelay; ?>">
                     <div class="service__image">

@@ -18,13 +18,13 @@
 					}
 
 					if ($count > 1) {
-						$animateDelay = $count*50;
+						$animationDelay = $count*50;
 					} else {
-						$animateDelay = 0;
+						$animationDelay = 0;
 					}
 			?>
 
-				<div class="blog__post post <?php echo $columnClass; ?>" data-aos="fade-up-mini" data-aos-delay="<?php echo $animateDelay; ?>">
+				<div class="blog__post post <?php echo $columnClass; ?>" data-aos="fade-up-mini" data-aos-delay="<?php echo $animationDelay; ?>">
 					<div class="post__wrapper">
 						<div class="post__image">
 							<a href="<?php echo $link; ?>">
