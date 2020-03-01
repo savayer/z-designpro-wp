@@ -3,7 +3,7 @@
 <section class="blog">
 	<div class="container">
 		<h1 class="blog__title title">Blog:</h1>
-		<div class="order_here"><a href="#">Order Here</a></div>
+		<div class="order_here"><a href="<?php the_field('order_here_link', 9); ?>" target="_blank">Order Here</a></div>
 		<div class="blog__wrapper">
 			<?php
 				$count = 0;

@@ -2215,7 +2215,6 @@ h3 {
 }
 .grid_wrapper {
     overflow: hidden;
-    min-height: 80vh;
 }
 .grid_works {
     max-width: 95%;

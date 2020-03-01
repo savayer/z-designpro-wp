@@ -21,7 +21,6 @@ span.wpcf7-not-valid-tip {
     -webkit-transition: top 0.3s, font-size 0.3s;
     transition: top 0.3s, font-size 0.3s;
 }
-
 .contact__group {
     margin: 2.5rem 0;
 }
@@ -36,4 +35,7 @@ div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
     font-family: "Open Sans";
     font-size: 1em;
     text-align: center;
+}
+.grid_wrapper {    
+    min-height: 80vh;
 }

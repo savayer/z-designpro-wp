@@ -211,10 +211,16 @@ add_action( 'wp_enqueue_scripts', 'z_scripts' );
 
 include_once('acf-repeater/acf-repeater.php');
 
+add_action( 'admin_init', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+
 function portfolio_post_type() {
 	$args = array(
 		'public' => true,
 		'label' => 'Portfolio',
+		'menu_icon' => 'dashicons-portfolio',
 		'taxonomies' => array('category' ),
 		'supports' => array( 'title', 'editor', 'author', 'thumbnail' )
 	);
