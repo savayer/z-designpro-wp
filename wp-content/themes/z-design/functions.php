@@ -163,7 +163,8 @@ function z_scripts() {
 	if (is_page()) {
 		global $wp_query;
 		$template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
-		if ($template_name == 'page-home.php') {			   
+
+		if ($template_name === 'page-home.php') {			   
 			wp_enqueue_script( 'indexjs');
 			$categories = get_categories( array(
 				'taxonomy'     => 'category',
