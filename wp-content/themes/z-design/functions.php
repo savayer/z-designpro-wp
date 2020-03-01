@@ -153,8 +153,10 @@ function dd($data) {
 
 function z_scripts() {
 	wp_enqueue_style( 'style-main', get_stylesheet_uri() );
+	wp_enqueue_style( 'style-fixes', get_template_directory_uri() . '/css/fixes.css' );
 	
 	wp_register_script('indexjs', get_template_directory_uri() . '/js/index.min.js', array(), false, true );
+	wp_register_script('fixesjs', get_template_directory_uri() . '/js/fixes.js', array(), false, true );
 	wp_register_script('mainjs', get_template_directory_uri() . '/js/main.min.js', array(), false, true );
 	wp_register_script( 'script-vendor', get_template_directory_uri() . '/js/vendor.min.js', array(), false, true);
 	
@@ -200,7 +202,7 @@ function z_scripts() {
 			wp_enqueue_script( 'script-vendor');
 		}
 	}
-	
+	wp_enqueue_script( 'fixesjs');
 }
 add_action( 'wp_enqueue_scripts', 'z_scripts' );
 
