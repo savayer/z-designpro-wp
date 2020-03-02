@@ -15,3 +15,131 @@ body {
 	unicode-bidi: embed;
 }
 */
+
+@font-face {
+    font-family: 'Reforma-Bold';
+    src: url('fonts/Reforma/FbReforma-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'FB Reforma';
+    src: url('fonts/Reforma/FbReforma-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Open-Sans-Hebrew-Bold';
+    src: url('fonts/Open_Sans_Heb/OpenSansHebrew-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Open-Sans-Hebrew-ExtraBold';
+    src: url('fonts/Open_Sans_Heb/OpenSansHebrew-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Open-Sans-Hebrew';
+    src: url('fonts/Open_Sans_Heb/OpenSansHebrew-Regular.ttf') format('truetype');
+}
+/*
+* Menu
+*/
+
+.menu {
+    direction: rtl;
+}
+
+.menu__link svg {
+    margin-right: 0;
+    margin-left: 1.5rem;
+}
+
+.menu__link {
+	font-family: 'Reforma-Bold';
+	font-size: 34px;
+}
+
+/*
+* About
+*/
+
+.modal__overlay_body {
+    direction: rtl;
+}
+.modal__team_title {
+	font-family: 'Reforma-Bold';
+}
+
+.about__content, .about__content * {
+	direction: rtl;
+	font-family: 'FB Reforma';
+}
+.about__buttons {
+    direction: rtl;
+}
+.about__buttons .button__container {
+	height: 14px;
+    margin-left: 0;
+	margin-right: 12px;
+}
+@media (max-width: 500px) {
+	.about__buttons .button__container {
+		height: 22px;
+		margin-left: 0;
+		margin-right: 0;
+		left: 12px;
+		right: auto;
+	}
+	.about__team .about__title {
+		font-family: 'Reforma-Bold';
+	}
+}
+@-webkit-keyframes moveRtl {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(-7px);
+        transform: translateX(-7px);
+    }
+}
+@keyframes moveRtl {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    50% {
+        -webkit-transform: translateX(-7px);
+        transform: translateX(-7px);
+    }
+}
+
+.about__buttons .button:hover .button__arrow {
+    -webkit-animation: 0.7s moveRtl;
+    animation: 0.7s moveRtl;
+}
+
+.contact__group span.field_label {
+	font-family: 'Open-Sans-Hebrew-ExtraBold';
+	font-size: 1.125em;
+	left: auto;
+	right: 0;
+}
+span.wpcf7-not-valid-tip {
+	right: auto;
+	left: 0;
+}
+
+form.wpcf7-form {
+    direction: rtl;
+}
+
+.contact__form button span {
+	background: url(img/svg/form_arrow_he.svg) center/contain no-repeat;
+	right: auto;
+	left: 1em;
+}
+
+.contact__form button:hover span {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+}

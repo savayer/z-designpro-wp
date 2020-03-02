@@ -39,3 +39,13 @@ div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
 .grid_wrapper {    
     min-height: 80vh;
 }
+
+.dropline_img {
+    padding-bottom: 25%;
+}
+
+@media (max-width: 500px) {
+    .work__description--desk {
+        display: none;
+    }
+}

@@ -26,6 +26,9 @@ get_header();
                 <span class="work__name">
                     {{ projectName }}
                 </span>
+                <span class="work__description work__description--desk">
+                    {{ projectDescription }}
+                </span>
                 <span class="work__description">
                     <div v-if="goToSite" class="work__mobile-view-site">
                         <a :href="goToSite" class="button button--mobile">

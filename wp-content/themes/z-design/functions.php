@@ -204,6 +204,9 @@ function z_scripts() {
 		}
 	}
 	wp_enqueue_script( 'fixesjs');
+	if (wpm_get_language() == 'he') {
+		wp_enqueue_style( 'style-rtl', get_template_directory_uri() . '/rtl.css' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'z_scripts' );
 
