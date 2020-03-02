@@ -141,3 +141,69 @@ form.wpcf7-form {
     -webkit-transform: translateX(-5px);
     transform: translateX(-5px);
 }
+
+/*
+* General
+*/
+
+.title {
+	font-family: 'Reforma-Bold';
+	word-spacing: 2px;	
+	font-size: 2.75em;
+}
+
+/*
+* Services
+*/
+.services {
+	direction: rtl;
+}
+
+.service__description {
+	font-family: 'FB Reforma';
+	font-size: 1.125em;
+}
+
+/*
+* Process
+*/
+
+.process {
+	direction: rtl;
+}
+.p__title {
+	font-family: 'Reforma-Bold';
+	font-size: 1.75em;
+}
+.p__description {
+	font-family: "Fb Reforma";
+	line-height: 1.25;
+}
+.process__item.p {
+	padding: 2rem 0 2rem 1.5rem;
+}
+.p__content {
+	margin-left: 0;
+	margin-right: 1.5rem;
+}
+@media (max-width: 1500px) {
+	.process__item.p {				
+		padding: 1.5rem 0 2rem 1.5rem;
+	}
+}
+@media screen and (max-width: 400px) {
+	.p__title {
+		font-size: 1.35em;
+	}
+	.p__content {	
+		margin-right: 1.125rem;
+	}
+	.process__item.p {
+		padding: 1.5rem 0 2rem 1rem;
+	}
+}
+@media screen and (max-width: 350px) {
+	.p__title {
+		font-size: 1.25em;
+	}
+}

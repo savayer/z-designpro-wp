@@ -3,11 +3,14 @@
  * Template Name: Services
  */
 get_header();
+$currentLang = wpm_get_language();
 ?>
 
 <section class="services">
     <div class="container">
-        <h1 class="services__title title">Our services:</h1>
+        <h1 class="services__title title">            
+            <?php echo $currentLang === 'he' ? 'השירותים שלנו:' : 'Our services:'; ?>            
+        </h1>
         <div class="services__wrapper">
             <?php 
             $i = 0;            

@@ -4,10 +4,18 @@
  */
 get_header();
 include_once 'template-parts/process_svg.php';
+$currentLang = wpm_get_language();
+if ($currentLang === 'he') {
+    $SVGs = $processSvgHe;
+} else {
+    $SVGs = $processSvg;
+}
 ?>
 
 <section class="process">
-    <h1 class="process__title title">Process:</h1>
+    <h1 class="process__title title">
+        <?php echo $currentLang === 'he' ? 'תהליך:' : 'Process:'; ?>
+    </h1>
     <div class="process__wrapper">
         <?php 
             $i = 0;
@@ -20,7 +28,7 @@ include_once 'template-parts/process_svg.php';
                 }
         ?>
                 <div class="process__item p" data-aos="fade-up-mini" data-aos-delay="<?php echo $animationDelay; ?>">
-                    <?php echo $processSvg[$i]; ?>
+                    <?php echo $SVGs[$i]; ?>
                     <div class="p__content">
                         <div class="p__title">
                             <?php echo $process['process_name']; ?>
@@ -36,7 +44,9 @@ include_once 'template-parts/process_svg.php';
         ?>
     </div>
 
-    <div class="process__title process__title--clients title">Our clients:</div>
+    <div class="process__title process__title--clients title">
+        <?php echo $currentLang === 'he' ? 'בין הלקוחות:' : 'Our Clients:'; ?>
+    </div>
     <div class="process__logos process__wrapper logos">
         <?php 
             $i = 0;
