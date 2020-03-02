@@ -207,3 +207,60 @@ form.wpcf7-form {
 		font-size: 1.25em;
 	}
 }
+
+/*
+* Blog
+*/
+
+.blog {
+	direction: rtl;
+}
+.post__title a {
+	font-family: 'Reforma-Bold';
+	font-size: 1.875em;
+}
+
+.post__readmore span {
+    background: url(img/svg/red_arrow_left.svg) center/contain no-repeat;    
+    margin-left: 0;
+	margin-right: .5rem;
+	width: 25px;
+    height: 16px;
+}
+.post__readmore:hover span {
+    -webkit-transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-4px, 0, 0);
+}
+.post__introtext {
+	font-family: "Fb Reforma";
+	font-size: 1.125em;
+}
+.date:before {
+	margin-right: 0;
+	margin-left: 5px;
+}
+
+.single_post__content_wrapper {
+	direction: rtl;
+}
+
+.single_post__title {
+	font-family: 'Reforma-Bold';
+	font-size: 1.875em;
+}
+
+.single_post__content, .single_post__content * {
+	font-family: "Fb Reforma";
+}
+
+@media (max-width: 500px) {
+	.post__title a {
+		font-size: 1.5em;
+	}
+	.post__introtext {
+		font-size: 1em;
+	}
+	.title {
+		font-size: 2.25em;
+	}
+}

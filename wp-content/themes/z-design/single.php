@@ -8,15 +8,22 @@
  */
 
 get_header();
-?>
-<?php
+$currentLang = wpm_get_language();
+
 	while ( have_posts() ) :
 		the_post(); ?>
 		<article class="single_post">
 			<div class="container">
 				<div class="single_post__wrapper">
 					<aside class="single_post__aside">
-						<a href="/blog">
+						<?php 
+							if ($currentLang === 'he') {
+								$blogHref = '/blog';
+							} else {
+								$blogHref = '/en/blog';                        
+							}
+						?>
+						<a href="<?php echo $blogHref; ?>">
 							<svg class="close_icon single_post__close" viewBox="0 0 42 50">
 								<path class="close_icon__arc" style="fill:none;stroke:#231f20;stroke-width:2;stroke-miterlimit:10" d="M 0.58123819,5.8 C 4.7812382,2.8 9.9812382,1 15.581238,1 c 14.2,0 25.7,11.5 25.7,25.7 0,9.9 -5.6,18.5 -13.8,22.8" />
 								<line class="line1" style="fill:none;stroke:#231f20;stroke-width:5;stroke-miterlimit:10" x1="5.0812378" y1="16.800001" x2="25.58124" y2="37.299999" />

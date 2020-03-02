@@ -1,8 +1,13 @@
-<?php get_header(); ?>
+<?php 
+	get_header(); 
+	$currentLang = wpm_get_language();
+?>
 
 <section class="blog">
 	<div class="container">
-		<h1 class="blog__title title">Blog:</h1>
+		<h1 class="blog__title title">
+			<?php echo $currentLang === 'he' ? 'בלוג:' : 'Blog:'; ?>
+		</h1>
 		<div class="order_here"><a href="<?php the_field('order_here_link', 9); ?>" target="_blank">Order Here</a></div>
 		<div class="blog__wrapper">
 			<?php
@@ -45,7 +50,7 @@
 									<?php echo get_the_date( 'd/m/Y' ); ?>
 								</div>
 								<a href="<?php echo $link; ?>" class="post__readmore">
-									Read More
+									<?php echo $currentLang === 'he' ? 'קרא יותר' : 'Read More'; ?>
 									<span class="post__arrow"></span>
 								</a>
 							</div>
