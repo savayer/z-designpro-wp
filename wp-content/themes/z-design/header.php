@@ -54,7 +54,11 @@
         <div class="modal modal--contact">
             <div class="modal__overlay" style="transform: translateX(125%);">
                 <div class="modal__overlay_body">
-                    <img class="dropline_img" data-src="<?php bloginfo('template_directory') ?>/img/contact-en.gif">
+                    <?php if ($currentLang === 'he') : ?>
+                        <img class="dropline_img" data-src="<?php bloginfo('template_directory') ?>/img/contact-he.gif">
+                    <?php else: ?>
+                        <img class="dropline_img" data-src="<?php bloginfo('template_directory') ?>/img/contact-en.gif">
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="modal__form" style="transform: translateX(125%);">
@@ -135,7 +139,7 @@
                     </header>
 
                     <div class="modal__content modal__content--about">
-                        <img src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
+                        <img id="change_to_gif_js" src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
                         <div class="about__content">
                             <?php echo get_post_field('post_content', 11); ?>
                         </div>

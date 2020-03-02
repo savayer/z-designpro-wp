@@ -12,7 +12,7 @@ $currentLang = wpm_get_language();
             <div class="about__title">About</div>
         </div>
         <div class="about__body">
-            <img src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
+            <img id="change_to_gif_js_about_template" src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
             <div class="about__content">
                 <?php echo get_post_field('post_content', 11); ?>
             </div>
