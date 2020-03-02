@@ -88,7 +88,9 @@
                 <div class="modal__overlay_body">
                     <div class="modal__team_content">
                         <?php if (get_field('type_about_content', 11) === 'Clients') : ?>
-                            <div class="modal__team_title">Our Clients:</div>
+                            <div class="modal__team_title">
+                                <?php echo $currentLang === 'he' ? 'בין הלקוחות:' : 'Our Clients:'; ?>
+                            </div>
                             <div class="modal__team_hr"></div>
                             <div class="modal__logos">
                                 <?php                                
@@ -99,8 +101,8 @@
                                 <?php endforeach; ?>
                             </div>
                         <?php else : ?>
-                            <div class="modal__team_title">
-                                <?php echo $currentLang === 'he' ? 'בין הלקוחות:' : 'Our Team:'; ?>
+                            <div class="modal__team_title">                                
+                                <?php echo $currentLang === 'he' ? 'הצוות שלנו:' : 'Our Team:'; ?>
                             </div>
                             <div class="modal__team_hr"></div>
                             <div class="modal__employees employees">

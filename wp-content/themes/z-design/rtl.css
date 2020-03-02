@@ -9,13 +9,6 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 
 */
 
-/*
-body {
-	direction: rtl;
-	unicode-bidi: embed;
-}
-*/
-
 @font-face {
     font-family: 'Reforma-Bold';
     src: url('fonts/Reforma/FbReforma-Bold.otf') format('opentype');
@@ -61,6 +54,9 @@ body {
 
 .modal__overlay_body {
     direction: rtl;
+}
+.modal__logos {
+	direction: ltr;
 }
 .modal__team_title {
 	font-family: 'Reforma-Bold';
@@ -117,7 +113,9 @@ body {
     -webkit-animation: 0.7s moveRtl;
     animation: 0.7s moveRtl;
 }
-
+/*
+* Contact
+*/
 .contact__group span.field_label {
 	font-family: 'Open-Sans-Hebrew-ExtraBold';
 	font-size: 1.125em;

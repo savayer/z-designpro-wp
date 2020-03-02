@@ -58,7 +58,7 @@ $currentLang = wpm_get_language();
 
             <div class="about__team">
                 <div class="about__title">
-                    <?php echo $currentLang === 'he' ? 'בין הלקוחות:' : 'Our Team:'; ?>
+                    <?php echo $currentLang === 'he' ? 'הצוות שלנו:' : 'Our Team:'; ?>
                 </div>
                 <div class="employees">
                     <?php foreach(get_field('team', 11) as $employee) : ?>
