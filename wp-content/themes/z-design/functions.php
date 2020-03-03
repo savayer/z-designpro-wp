@@ -231,15 +231,6 @@ function portfolio_post_type() {
 }
 add_action( 'init', 'portfolio_post_type' );
 
-add_filter('nav_menu_css_class' , 'my_nav_special_class' , 10 , 2);
-function my_nav_special_class($classes, $item){
-	if (in_array('current-menu-item', $classes) || in_array('current_page_item', $classes)
-			/* || in_array('current-page-ancestor', $classes) */ ){
-		$classes[] = 'active ';
-	}
-    return $classes;
-}
-
 class MyWalker extends Walker_Nav_Menu
 {
 
