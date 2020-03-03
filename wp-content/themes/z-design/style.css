@@ -3096,6 +3096,7 @@ img[lazy="loading"] {
 }
 .modal.showed .contact__button,
 .modal.showed .contact__phone {
+    -webkit-tap-highlight-color: transparent;
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1;

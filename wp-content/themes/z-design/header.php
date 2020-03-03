@@ -9,22 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="shortcut icon" href="<?php bloginfo('template_directory') ?>/img/favicons/favicon.ico" type="image/x-icon">
-    <link rel="icon" sizes="16x16" href="<?php bloginfo('template_directory') ?>/img/favicons/favicon-16x16.png" type="image/png">
-    <link rel="icon" sizes="32x32" href="<?php bloginfo('template_directory') ?>/img/favicons/favicon-32x32.png" type="image/png">
-    <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-precomposed.png">
-    <link rel="apple-touch-icon" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="1024x1024" href="<?php bloginfo('template_directory') ?>/img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="shortcut icon" href="<?php bloginfo('template_directory') ?>/img/favicon.ico" type="image/x-icon">
     <?php wp_head(); ?>
 </head>
 
@@ -139,7 +124,7 @@
                     </header>
 
                     <div class="modal__content modal__content--about">
-                        <img id="change_to_gif_js" src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
+                        <img id="change_to_gif_js" src="<?php bloginfo('template_directory') ?>/img/ajax-loader.gif" class="about__image" alt="">
                         <div class="about__content">
                             <?php echo get_post_field('post_content', 11); ?>
                         </div>
@@ -210,7 +195,7 @@
             ?>
         </div>
         <div class="wrapper">
-            <nav class="nav <?php if (is_page_template('page-home.php')) { echo 'nav--home'; } ?>">
+            <nav class="nav <?php if (is_page_template('page-home.php')) { echo 'nav--home'; } else { echo 'nav--inner'; } ?>">
                 <?php 
                     if (function_exists('wpm_get_languages')) {
                         $languages = wpm_get_languages();

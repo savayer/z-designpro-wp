@@ -67,12 +67,21 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 	font-family: 'FB Reforma';
 }
 .about__buttons {
-    direction: rtl;
+	direction: rtl;    
+}
+.button__text {
+	font-family: 'Open-Sans-Hebrew';
 }
 .about__buttons .button__container {
 	height: 14px;
     margin-left: 0;
 	margin-right: 12px;
+}
+.about__buttons .button {
+	padding: 0.5em 2.05em 0.5em 1em;
+}
+.order_here a {
+	background: url(img/blog/order_here_he.png) center/contain no-repeat;
 }
 @media (max-width: 500px) {
 	.about__buttons .button__container {
@@ -121,10 +130,6 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 	font-size: 1.125em;
 	left: auto;
 	right: 0;
-}
-span.wpcf7-not-valid-tip {
-	right: auto;
-	left: 0;
 }
 
 form.wpcf7-form {
@@ -219,13 +224,16 @@ form.wpcf7-form {
 	font-family: 'Reforma-Bold';
 	font-size: 1.875em;
 }
-
+.post__readmore, .contact__button button {
+	font-family: 'Open-Sans-Hebrew';
+}
 .post__readmore span {
     background: url(img/svg/red_arrow_left.svg) center/contain no-repeat;    
     margin-left: 0;
 	margin-right: .5rem;
 	width: 25px;
-    height: 16px;
+	height: 14px;
+	vertical-align: baseline;
 }
 .post__readmore:hover span {
     -webkit-transform: translate3d(-4px, 0, 0);

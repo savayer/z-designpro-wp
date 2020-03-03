@@ -49,3 +49,7 @@ div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
         display: none;
     }
 }
+
+.grecaptcha-badge {
+    display: none !important;
+}

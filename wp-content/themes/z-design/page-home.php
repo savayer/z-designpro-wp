@@ -31,7 +31,7 @@ get_header();
                 </span>
                 <span class="work__description">
                     <div v-if="goToSite" class="work__mobile-view-site">
-                        <a :href="goToSite" class="button button--mobile">
+                        <a :href="goToSite" target="_blank" class="button button--mobile">
                             <span class="button__text">
                                 Go to site
                             </span>
@@ -54,7 +54,7 @@ get_header();
                 </span>
             </div>
             <div class="work__view_site" v-if="goToSite">
-                <a :href="goToSite" class="button button--white">
+                <a :href="goToSite" target="_blank" class="button button--white">
                     <span class="button__text">
                         Go to site
                     </span>
