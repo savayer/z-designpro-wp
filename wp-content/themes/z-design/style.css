@@ -3103,6 +3103,9 @@ img[lazy="loading"] {
     -webkit-transition: 1.8s;
     transition: 1.8s;
 }
+.contact__button button {
+    -webkit-tap-highlight-color: transparent;
+}
 .modal.showed .modal__team_hr,
 .modal.showed .modal__team_title {
     padding-top: 0;

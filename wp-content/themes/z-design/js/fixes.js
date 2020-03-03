@@ -8,6 +8,7 @@ if (imgAboutTemplate) {
         .then(function(data) {
             if (data.status === 200) {
                 imgAboutTemplate.setAttribute('src', data.url);
+                imgAboutTemplate.classList.remove('loading');
             }
         })
     })

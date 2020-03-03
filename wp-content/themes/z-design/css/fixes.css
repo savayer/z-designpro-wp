@@ -53,3 +53,9 @@ div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
 .grecaptcha-badge {
     display: none !important;
 }
+
+img#change_to_gif_js_about_template.loading {
+    width: 40px;
+    margin: auto;
+    display: block;
+}
