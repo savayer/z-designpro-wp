@@ -75,3 +75,11 @@ img#change_to_gif_js.loading {
     top: calc(50% - 32px);
     max-width: 32px;
 }
+
+.contact__group.contact__group--4 {
+    margin: 2.8rem 0 2.5rem;
+}
+
+.contact__group--4 span.field_label.label-active {
+    top: -1.25em;
+}
