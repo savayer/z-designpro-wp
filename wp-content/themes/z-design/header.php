@@ -124,7 +124,10 @@
                     </header>
 
                     <div class="modal__content modal__content--about">
-                        <img id="change_to_gif_js" src="<?php bloginfo('template_directory') ?>/img/ajax-loader.gif" class="about__image" alt="">
+                        <div class="gif_block gif_block--modal">
+                            <img class="gif_block__loader gif_block__loader--modal" src="<?php bloginfo('template_directory') ?>/img/ajax-loader.gif" alt="">
+                            <img id="change_to_gif_js" src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image loading" alt="">
+                        </div>                        
                         <div class="about__content">
                             <?php echo get_post_field('post_content', 11); ?>
                         </div>

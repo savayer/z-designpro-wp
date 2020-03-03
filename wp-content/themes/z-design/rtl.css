@@ -19,6 +19,10 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
     src: url('fonts/Reforma/FbReforma-Regular.otf') format('opentype');
 }
 @font-face {
+    font-family: 'FB Reforma Medium';
+    src: url('fonts/Reforma/FbReforma-Medium.otf') format('opentype');
+}
+@font-face {
     font-family: 'Open-Sans-Hebrew-Bold';
     src: url('fonts/Open_Sans_Heb/OpenSansHebrew-Bold.ttf') format('truetype');
 }
@@ -76,7 +80,8 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 	direction: rtl;    
 }
 .button__text {
-	font-family: 'Open-Sans-Hebrew';
+	font-family: 'FB Reforma Medium';
+	font-size: 1.125em;
 }
 .about__buttons .button__container {
 	height: 14px;
@@ -230,7 +235,10 @@ form.wpcf7-form {
 	font-family: 'Reforma-Bold';
 	font-size: 1.875em;
 }
-.post__readmore, .contact__button button {
+.contact__button button {
+    font-family: 'FB Reforma Medium';
+}
+.post__readmore {
 	font-family: 'Open-Sans-Hebrew';
 }
 .post__readmore span {

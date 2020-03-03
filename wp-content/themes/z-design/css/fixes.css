@@ -54,8 +54,24 @@ div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
     display: none !important;
 }
 
-img#change_to_gif_js_about_template.loading {
-    width: 40px;
+img#change_to_gif_js_about_template.loading,
+img#change_to_gif_js.loading {
+    visibility: hidden;
+}
+
+.gif_block {
+    position: relative;    
+}
+
+.gif_block.add_height {
+    padding-bottom: 10px;
+}
+
+.gif_block__loader {
+    position: absolute;
+    right: 0;
+    left: 0;
     margin: auto;
-    display: block;
+    top: calc(50% - 32px);
+    max-width: 32px;
 }
