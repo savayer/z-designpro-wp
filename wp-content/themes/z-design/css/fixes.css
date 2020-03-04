@@ -50,6 +50,12 @@ div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
     }
 }
 
+@media (min-width: 501px) {
+    .work__description--mobile {
+        display: none;
+    }
+}
+
 .grecaptcha-badge {
     display: none !important;
 }
