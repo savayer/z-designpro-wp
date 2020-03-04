@@ -5,25 +5,47 @@ var imgAboutTemplate = document.querySelector('#change_to_gif_js_about_template'
 var gifSource = '/wp-content/themes/z-design/img/about/about.gif';
 
 if (imgAboutTemplate) {
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         var block = document.querySelector('.gif_block--template')
         var gif = new Image();
         gif.src = gifSource;
-        gif.onload = function() {
+        gif.onload = function () {
             imgAboutTemplate.style.display = 'none';
             block.insertAdjacentElement('beforeend', gif)
         }
     })
 } else if (img) {
-    aboutMenuItem.addEventListener('click', function() {
+    aboutMenuItem.addEventListener('click', function () {
         if (img.dataset.gif) return;
         var block = document.querySelector('.gif_block--modal')
         var gif = new Image();
         gif.src = gifSource;
-        gif.onload = function() {
+        gif.onload = function () {
             img.style.display = 'none';
             img.dataset.gif = true
             block.insertAdjacentElement('beforeend', gif)
         }
     })
+}
+/*************************************************** */
+
+function GetIEVersion() {
+    var sAgent = window.navigator.userAgent;
+    var Idx = sAgent.indexOf("MSIE");
+
+    // If IE, return version number.
+    if (Idx > 0)
+        return parseInt(sAgent.substring(Idx + 5, sAgent.indexOf(".", Idx)));
+
+    // If IE 11 then look for Updated user agent string.
+    else if (!!navigator.userAgent.match(/Trident\/7\./))
+        return 11;
+
+    else
+        return 0; //It is not IE
+}
+
+if (GetIEVersion() > 0) {
+    var ie = document.getElementById('internet-explorer')
+    ie.classList.add('active')
 }

@@ -115,3 +115,62 @@ li#menu-item-65 a strong {
     position: relative;
     top: 2px;
 }
+
+/*
+*ie
+*/
+.internet-explorer.ie {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 9999999999;
+    display: none;
+}
+.internet-explorer.ie.active {
+    display: block;
+}
+.ie__content {
+    width: 590px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.ie__warning {
+    width: 100px;
+    height: 100px;
+    background: url(../img/ie/warning.svg) center/contain no-repeat;
+    margin: auto;
+}
+
+.ie__title {
+    margin: 1.25em 0;
+    text-transform: inherit;
+    font-weight: 800;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 2em !important;
+    text-align: center;
+}
+
+.ie__description {
+    font-size: 1.25em;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.ie__hr {
+    height: 8px;
+    width: 100%;
+    margin: 3em 0;
+    background: url(../img/ie/ie_hr.svg) center/contain no-repeat;
+}
+
+.ie__browsers {
+    height: 70px;
+    width: 100%;
+    background: url(../img/ie/browsers.png) center/contain no-repeat;
+}

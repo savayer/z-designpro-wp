@@ -32,7 +32,20 @@
                 <div></div>
                 <div></div>
             </div>
-        </div>    
+        </div>
+    <div class="internet-explorer ie" id="internet-explorer">
+        <div class="ie__content">
+            <div class="ie__warning"></div>
+            <div class="title ie__title">
+                Your Browser is Not supported
+            </div>
+            <div class="ie__description">
+                To View our site, please upgrade to the latest version of one of the following browsers:
+            </div>
+            <div class="ie__hr"></div>
+            <div class="ie__browsers"></div>
+        </div>
+    </div>
     <div class="hidden" style="display:none">
     <?php endif; ?>
         <div class="overlay"></div>
