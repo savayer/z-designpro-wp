@@ -83,3 +83,35 @@ img#change_to_gif_js.loading {
 .contact__group--4 span.field_label.label-active {
     top: -1.25em;
 }
+div.wpcf7-mail-sent-ok {
+    border: none;
+    text-align: center;
+    color: #f14359;
+    font-size: 1.125em;
+    font-family: 'Open Sans';
+}
+
+#menu-item-68 a strong {
+    position: relative;
+    top: 3px;
+}
+li#menu-item-66 a strong {
+    position: relative;
+    top: 2px;
+}
+li#menu-item-69 a strong {
+    position: relative;
+    top: 1px;
+}
+li#menu-item-70 a strong {
+    position: relative;
+    top: 3px;
+}
+li#menu-item-67 a strong {
+    position: relative;
+    top: 2px;
+}
+li#menu-item-65 a strong {
+    position: relative;
+    top: 2px;
+}

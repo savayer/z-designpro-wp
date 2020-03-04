@@ -147,7 +147,14 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 	left: auto;
 	right: 0;
 }
-
+div.wpcf7-mail-sent-ok {
+    border: 02px solid #398f14;
+    border: none;
+    text-align: center;
+    color: #f14359;
+    font-family: 'Open-Sans-Hebrew';
+    font-size: 1.125em;
+}
 form.wpcf7-form {
     direction: rtl;
 }
@@ -291,5 +298,22 @@ form.wpcf7-form {
 	}
 	.title {
 		font-size: 2.25em;
+	}
+}
+
+#menu-item-68 a strong {
+    position: relative;
+    top: 2.8px;
+}
+li#menu-item-65 a strong,
+li#menu-item-67 a strong,
+li#menu-item-69 a strong,
+li#menu-item-65 a strong { 
+    top: 0;
+}
+@media (max-width: 500px) {
+	li#menu-item-66 a strong,
+	li#menu-item-70 a strong {		
+		top: .5px;
 	}
 }
