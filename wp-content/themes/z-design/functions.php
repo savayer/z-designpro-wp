@@ -188,7 +188,7 @@ function z_scripts() {
 					'site' => get_field('go_to_site_link', $id),
 					'category' => 'w-'.get_the_category($id)[0]->slug,
 					'description' => get_field('work_description', $id),
-					'image' => get_the_post_thumbnail_url($id),
+					'image' => get_the_post_thumbnail_url($id, 'portfolio-thumb'),
 					'media' => get_field('work_images', $id),
 				);
 			}
@@ -314,4 +314,8 @@ function imp_wpcf7_form_elements( $content ) {
     $content = substr_replace( $content, ' autocomplete="off" ', $str_pos, 0 );
 
     return $content;
+}
+
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'portfolio-thumb', 576, 9999 ); // 576 в ширину и без ограничения в высоту	
 }

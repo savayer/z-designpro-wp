@@ -180,3 +180,70 @@ li#menu-item-65 a strong {
     width: 100%;
     background: url(../img/ie/browsers.png) center/contain no-repeat;
 }
+
+
+/*****************/
+
+.nav__lang_wrapper {
+    perspective: 1000;
+    width: 2.5em;
+    height: 2.5em;
+    transition: .2s;
+}
+
+@media (min-width:576px) {
+    .nav__lang_wrapper {        
+        width: 2.25em;
+        height: 2.25em;        
+    }
+}
+@media screen and (max-width:400px) {
+    .nav__lang_wrapper {        
+        width: 2.125em;
+        height: 2.125em;        
+    }
+}
+.nav__lang_wrapper:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* переверните сторону при проведении мышью */
+.nav__lang_wrapper.hover .flipper {
+    transform: rotateY(360deg);
+}
+
+
+/* здесь находится скорость перевертывания */
+.flipper {
+    transition: 1s linear;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* скройте обратную сторону во время переворота */
+.front,
+.back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* лицевая сторона размещена над обратной */
+.front {
+    z-index: 2;
+}
+
+/* обратная, изначально скрытая сторона */
+.back {    
+    transform: rotateY(-180deg);
+}
+
+/* .nav__toggle_lang:hover {
+    width: 2.6em;
+    height: 2.6em;
+} */

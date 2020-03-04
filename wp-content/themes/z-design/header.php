@@ -213,6 +213,8 @@
         </div>
         <div class="wrapper">
             <nav class="nav <?php if (is_page_template('page-home.php')) { echo 'nav--home'; } else { echo 'nav--inner'; } ?>">
+                <div class="nav__lang_wrapper" data-href="<?php echo $currentLang === 'he' ? 'en' : ''  ?>">
+                    <div class="flipper">
                 <?php 
                     if (function_exists('wpm_get_languages')) {
                         $languages = wpm_get_languages();
@@ -222,13 +224,17 @@
                             $toggle_url = esc_url(wpm_translate_current_url($code));
                 
                             if ($code === $current) {
-                                continue;
+                                echo '<a href="' . $toggle_url . '" class="nav__toggle_lang back">';
+                                echo '<span>' . $code . '</span></a>';
+                            } else {
+                                echo '<a href="' . $toggle_url . '" class="nav__toggle_lang front">';
+                                echo '<span>' . $code . '</span></a>';
                             }
-                            echo '<a href="' . $toggle_url . '" class="nav__toggle_lang">';
-                            echo '<span>' . $code . '</span></a>';
                         }
                     }
                 ?>
+                </div>
+                </div>
                 <?php 
                     if ($currentLang === 'he') {
                         $homeHref = '/';

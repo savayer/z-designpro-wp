@@ -49,3 +49,22 @@ if (GetIEVersion() > 0) {
     var ie = document.getElementById('internet-explorer')
     ie.classList.add('active')
 }
+
+
+/******************************** */
+
+var lang = document.querySelector('.nav__lang_wrapper')
+
+lang.addEventListener('click', function(e) {
+    e.preventDefault();    
+    var href = this.dataset.href
+    this.classList.add('hover')
+    setTimeout(function() {
+        var pathname = document.location.pathname
+        if (pathname.indexOf('/en') != -1) {
+            document.location.href = document.location.origin + '/' + pathname.slice(3)
+        } else {
+            document.location.href = document.location.origin + '/' + href + pathname
+        }
+    }, 500)
+})

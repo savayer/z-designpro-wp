@@ -2365,7 +2365,7 @@ h3 {
     border-color: transparent
 }
 
-.nav--home.offset_lang .nav__toggle_lang,
+.nav--home.offset_lang .nav__lang_wrapper,
 .nav--home.offset_lang .nav__toggle_menu {
     position: fixed;
     left: 25px;
