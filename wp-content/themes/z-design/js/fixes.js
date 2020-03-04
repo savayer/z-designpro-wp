@@ -66,5 +66,5 @@ lang.addEventListener('click', function(e) {
         } else {
             document.location.href = document.location.origin + '/' + href + pathname
         }
-    }, 500)
+    }, 250)
 })

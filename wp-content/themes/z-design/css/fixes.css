@@ -191,12 +191,6 @@ li#menu-item-65 a strong {
     transition: .2s;
 }
 
-@media (min-width:576px) {
-    .nav__lang_wrapper {        
-        width: 2.25em;
-        height: 2.25em;        
-    }
-}
 @media screen and (max-width:400px) {
     .nav__lang_wrapper {        
         width: 2.125em;
@@ -211,13 +205,13 @@ li#menu-item-65 a strong {
 
 /* переверните сторону при проведении мышью */
 .nav__lang_wrapper.hover .flipper {
-    transform: rotateY(360deg);
+    transform: rotateY(180deg);
 }
 
 
 /* здесь находится скорость перевертывания */
 .flipper {
-    transition: 1s linear;
+    transition: .5s linear;
     transform-style: preserve-3d;
 
     position: relative;
