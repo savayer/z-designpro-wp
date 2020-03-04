@@ -203,13 +203,15 @@ li#menu-item-65 a strong {
     transform: scale(1.1);
 }
 
-/* переверните сторону при проведении мышью */
 .nav__lang_wrapper.hover .flipper {
     transform: rotateY(180deg);
 }
 
+.nav__lang_wrapper.hover .front {
+    transition: 0s .25s;
+    opacity: 0;
+}
 
-/* здесь находится скорость перевертывания */
 .flipper {
     transition: .5s linear;
     transform-style: preserve-3d;
@@ -217,7 +219,6 @@ li#menu-item-65 a strong {
     position: relative;
 }
 
-/* скройте обратную сторону во время переворота */
 .front,
 .back {
     backface-visibility: hidden;
@@ -227,17 +228,10 @@ li#menu-item-65 a strong {
     left: 0;
 }
 
-/* лицевая сторона размещена над обратной */
 .front {
     z-index: 2;
 }
 
-/* обратная, изначально скрытая сторона */
 .back {    
     transform: rotateY(-180deg);
 }
-
-/* .nav__toggle_lang:hover {
-    width: 2.6em;
-    height: 2.6em;
-} */
