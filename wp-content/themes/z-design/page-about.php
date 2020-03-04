@@ -13,8 +13,7 @@ $currentLang = wpm_get_language();
         </div>
         <div class="about__body">
             <div class="gif_block gif_block--template">
-                <img class="gif_block__loader gif_block__loader--template" src="<?php bloginfo('template_directory') ?>/img/ajax-loader.gif" alt="">
-                <img id="change_to_gif_js_about_template" src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image loading" alt="">
+                <img id="change_to_gif_js_about_template" src="<?php bloginfo('template_directory') ?>/img/about/about.png" class="about__image" alt="">
             </div>
             <div class="about__content">
                 <?php echo get_post_field('post_content', 11); ?>

@@ -2057,7 +2057,8 @@ h3 {
     -webkit-box-align: center;
     align-items: center;
     margin: 0 .5rem .75rem;
-    position: relative
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .button:hover .button__arrow {
@@ -4873,7 +4874,7 @@ img[lazy=loading] {
         width: 95%
     }
     .menu__link {
-        font-size: 1.125em
+        font-size: 1.285em;
     }
     .nav_works__item {
         padding: .4em .6em;

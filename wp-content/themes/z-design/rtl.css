@@ -54,7 +54,7 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 
 @media screen and (max-width: 576px) {
 	.menu__link {
-		font-size: 1.5em;
+		font-size: 1.725em;
 	}
 }
 
@@ -79,7 +79,7 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 .about__buttons {
 	direction: rtl;    
 }
-.button__text {
+.about__buttons .button__text {
 	font-family: 'FB Reforma Medium';
 	font-size: 1.125em;
 }
@@ -93,6 +93,11 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 }
 .order_here a {
 	background: url(img/blog/order_here_he.png) center/contain no-repeat;
+}
+@media (max-width: 550px) {
+	.about__buttons .button {
+		padding: .75em .75em .75em 1em;
+	}
 }
 @media (max-width: 500px) {
 	.about__buttons .button__container {
@@ -146,7 +151,9 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 form.wpcf7-form {
     direction: rtl;
 }
-
+.contact__form button {
+	font-size: 1.65em;
+}
 .contact__form button span {
 	background: url(img/svg/form_arrow_he.svg) center/contain no-repeat;
 	right: auto;

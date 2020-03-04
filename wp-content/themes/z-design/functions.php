@@ -301,3 +301,17 @@ class MyWalker extends Walker_Nav_Menu
 
         }
 }
+
+add_filter( 'wpcf7_form_elements', 'imp_wpcf7_form_elements' );
+function imp_wpcf7_form_elements( $content ) {
+    $str_pos = strpos( $content, 'name="your-name"' );
+    $content = substr_replace( $content, ' autocomplete="off" ', $str_pos, 0 );
+
+    $str_pos = strpos( $content, 'name="your-phone"' );
+	$content = substr_replace( $content, ' autocomplete="off" ', $str_pos, 0 );
+	
+	$str_pos = strpos( $content, 'name="your-email"' );
+    $content = substr_replace( $content, ' autocomplete="off" ', $str_pos, 0 );
+
+    return $content;
+}
