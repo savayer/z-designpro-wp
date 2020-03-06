@@ -33,7 +33,7 @@
 					<div class="post__wrapper">
 						<div class="post__image">
 							<a href="<?php echo $link; ?>">
-								<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $post->post_title; ?>">
+								<img src="<?php echo get_the_post_thumbnail_url($post->ID, 'blog-thumb'); ?>" alt="<?php echo $post->post_title; ?>">
 							</a>
 						</div>
 						<div class="post__content">

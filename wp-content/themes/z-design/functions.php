@@ -317,5 +317,6 @@ function imp_wpcf7_form_elements( $content ) {
 }
 
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'portfolio-thumb', 576, 9999 ); // 576 в ширину и без ограничения в высоту	
+	add_image_size( 'portfolio-thumb', 576, 9999 );
+	add_image_size( 'blog-thumb', 578, 9999 );
 }
