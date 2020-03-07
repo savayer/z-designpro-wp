@@ -2057,8 +2057,7 @@ h3 {
     -webkit-box-align: center;
     align-items: center;
     margin: 0 .5rem .75rem;
-    position: relative;
-    -webkit-tap-highlight-color: transparent;
+    position: relative
 }
 
 .button:hover .button__arrow {
@@ -2365,7 +2364,7 @@ h3 {
     border-color: transparent
 }
 
-.nav--home.offset_lang .nav__lang_wrapper,
+.nav--home.offset_lang .nav__toggle_lang,
 .nav--home.offset_lang .nav__toggle_menu {
     position: fixed;
     left: 25px;
@@ -3261,9 +3260,16 @@ img[lazy=loading] {
 }
 
 .single_post__wrapper {
+    opacity: 0;
     background: #fff;
     box-shadow: 0 50px 100px 40px #ccc;
     position: relative
+}
+
+.single_post__wrapper.fadein {
+    opacity: 1;
+    -webkit-transition: .7s linear .4s;
+    transition: .7s linear .4s
 }
 
 .single_post__image {
@@ -3552,6 +3558,12 @@ img[lazy=loading] {
 .contact__form textarea {
     max-height: 4.5em;
     resize: vertical;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none
+}
+
+.contact__form textarea::-webkit-scrollbar {
+    width: 0
 }
 
 .contact__form button {
@@ -3991,7 +4003,14 @@ img[lazy=loading] {
 }
 
 .about__content {
+    opacity: 0;
     margin-top: 2rem
+}
+
+.about__content.fadein {
+    -webkit-transition: .7s linear .7s;
+    transition: .7s linear .7s;
+    opacity: 1
 }
 
 .about__content * {
@@ -4006,11 +4025,18 @@ img[lazy=loading] {
 }
 
 .about__buttons {
+    opacity: 0;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: start;
     justify-content: flex-start;
     margin: 2rem -.5rem 0
+}
+
+.about__buttons.fadein {
+    -webkit-transition: .7s linear 1s;
+    transition: .7s linear 1s;
+    opacity: 1
 }
 
 .about {
@@ -4874,7 +4900,7 @@ img[lazy=loading] {
         width: 95%
     }
     .menu__link {
-        font-size: 1.285em;
+        font-size: 1.125em
     }
     .nav_works__item {
         padding: .4em .6em;

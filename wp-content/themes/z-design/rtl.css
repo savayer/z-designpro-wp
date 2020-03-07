@@ -147,6 +147,9 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 	left: auto;
 	right: 0;
 }
+span.wpcf7-not-valid-tip {
+	right: 0;
+}
 div.wpcf7-mail-sent-ok {
     border: 02px solid #398f14;
     border: none;
