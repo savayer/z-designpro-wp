@@ -119,7 +119,9 @@ get_header();
         </div>
         <div class="work__body" :class="{'hide': hiddenBody}">
             <div v-for="item, index in projectMedia" :key="index">
-                <img v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                <img v-if="document.documentElement.clientWidth > 700"
+                    v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                <img v-else v-lazy="item.work_image_lg" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                 <iframe v-if="item.youtube_link" :src="item.youtube_link" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
@@ -130,7 +132,12 @@ get_header();
                 :data-site="objMediaInfo.site"
                     :data-description="objMediaInfo.description">
                     <div v-for="item, i in objMediaInfo.media" :key="i">
-                        <img v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                        <img v-if="document.documentElement.clientWidth <= 440 && document.documentElement.clientWidth > 350"
+                            v-lazy="item.work_image_md" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                        <img v-else-if="document.documentElement.clientWidth < 350"
+                            v-lazy="item.work_image_xs" lazy="loading" :alt="`${projectName} screen ${index+1}`">
+                        <img v-else
+                            v-lazy="item.work_image_lg" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                         <iframe v-if="item.youtube_link" :src="item.youtube_link" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -145,7 +152,11 @@ get_header();
             <masonry :cols="{default: 3, 992: 2, 576: 1}" :column-class="'m-minus-top'">
                 <div class="grid_works__item" v-for="(work, index) in filtered" :key="work.id">
                     <a href="#view_project" class="grid_works__link" @click.prevent="popupProjectToggle(index)">
-                        <img :src="work.image" :alt="work.name">
+                        <img v-if="document.documentElement.clientWidth > 500" :src="work.image" :alt="work.name">
+                        <img v-else-if="document.documentElement.clientWidth <= 500 && document.documentElement.clientWidth > 400" 
+                                :src="work.image_md" :alt="work.name">
+                        <img v-else :src="work.image_xs" :alt="work.name">
+                        
                         <div class="grid_works__hover">
                             <div class="grid_works__more">
                                 <div class="grid_works__text">

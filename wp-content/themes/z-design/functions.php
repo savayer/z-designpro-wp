@@ -182,6 +182,16 @@ function z_scripts() {
 			$works = [];
 			foreach ($prependWorks as $work) {
 				$id = $work->ID;
+				$media = [];
+				foreach (get_field('work_images', $id) as $image) {
+					$media[] = array(
+						'work_image' => wp_get_attachment_image_url($image['work_image'], 'full'),
+						'work_image_lg' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-lg'),
+						'work_image_md' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-md'),
+						'work_image_xs' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-xs'),
+						'youtube_link' => $image['youtube_link']
+					);
+				}				
 				$works[] = array(
 					'id' => $id,
 					'name' => $work->post_title,
@@ -189,9 +199,12 @@ function z_scripts() {
 					'category' => 'w-'.get_the_category($id)[0]->slug,
 					'description' => get_field('work_description', $id),
 					'image' => get_the_post_thumbnail_url($id, 'portfolio-thumb'),
-					'media' => get_field('work_images', $id),
+					'image_xs' => get_the_post_thumbnail_url($id, 'portfolio-thumb-xs'),
+					'image_md' => get_the_post_thumbnail_url($id, 'portfolio-thumb-md'),
+					'media' => $media
 				);
 			}
+			//dd($works);
 			$data = array(
 				'cats' => $categories,
 				'works' => $works
@@ -318,5 +331,8 @@ function imp_wpcf7_form_elements( $content ) {
 
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'portfolio-thumb', 576, 9999 );
+	add_image_size( 'portfolio-thumb-xs', 350, 9999 );
+	add_image_size( 'portfolio-thumb-md', 440, 9999 );
+	add_image_size( 'portfolio-thumb-lg', 700, 9999 );
 	add_image_size( 'blog-thumb', 578, 9999 );
 }
