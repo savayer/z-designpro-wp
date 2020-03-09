@@ -33,7 +33,13 @@ $currentLang = wpm_get_language();
 					</aside>
 					<div class="single_post__container">
 						<div class="single_post__image">
-							<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php echo $post->post_title; ?>">
+							<img class="post-thumb"
+								src="<?php echo the_post_thumbnail_url(); ?>" 
+								data-main="<?php echo the_post_thumbnail_url(); ?>"
+								data-lg="<?php echo the_post_thumbnail_url('post-thumb-lg'); ?>"
+								data-md="<?php echo the_post_thumbnail_url('post-thumb-md'); ?>"
+								data-xs="<?php echo the_post_thumbnail_url('post-thumb-xs'); ?>"
+								alt="<?php echo $post->post_title; ?>">
 						</div>
 						<div class="single_post__content_wrapper">
 							<div class="single_post__title">

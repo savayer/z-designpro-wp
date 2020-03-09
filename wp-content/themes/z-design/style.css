@@ -3260,6 +3260,8 @@ img[lazy=loading] {
 }
 
 .single_post__wrapper {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
     opacity: 0;
     background: #fff;
     box-shadow: 0 50px 100px 40px #ccc;
@@ -3269,7 +3271,9 @@ img[lazy=loading] {
 .single_post__wrapper.fadein {
     opacity: 1;
     -webkit-transition: .7s linear .4s;
-    transition: .7s linear .4s
+    transition: .7s linear .4s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
 }
 
 .single_post__image {
@@ -4003,6 +4007,8 @@ img[lazy=loading] {
 }
 
 .about__content {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
     opacity: 0;
     margin-top: 2rem
 }
@@ -4010,7 +4016,9 @@ img[lazy=loading] {
 .about__content.fadein {
     -webkit-transition: .7s linear .7s;
     transition: .7s linear .7s;
-    opacity: 1
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
 }
 
 .about__content * {
@@ -4025,6 +4033,8 @@ img[lazy=loading] {
 }
 
 .about__buttons {
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
     opacity: 0;
     display: -webkit-box;
     display: flex;
@@ -4034,9 +4044,11 @@ img[lazy=loading] {
 }
 
 .about__buttons.fadein {
-    -webkit-transition: .7s linear 1s;
-    transition: .7s linear 1s;
-    opacity: 1
+    -webkit-transition: .7s linear 1.3s;
+    transition: .7s linear 1.3s;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0)
 }
 
 .about {

@@ -1,3 +1,6 @@
+/*
+* Load gif
+*/
 var aboutMenuItem = document.querySelector('[data-modal="about"]');
 var img = document.querySelector('#change_to_gif_js');
 var imgAboutTemplate = document.querySelector('#change_to_gif_js_about_template');
@@ -28,7 +31,9 @@ if (imgAboutTemplate) {
     })
 }
 /*************************************************** */
-
+/*
+* Detect IE to show that the browser does not support the site
+*/
 function GetIEVersion() {
     var sAgent = window.navigator.userAgent;
     var Idx = sAgent.indexOf("MSIE");
@@ -52,7 +57,9 @@ if (GetIEVersion() > 0) {
 
 
 /******************************** */
-
+/*
+* Coin animation lang
+*/
 var lang = document.querySelector('.nav__lang_wrapper')
 
 lang.addEventListener('click', function(e) {
@@ -68,3 +75,53 @@ lang.addEventListener('click', function(e) {
         }
     }, 250)
 })
+
+/************************************** */
+/*
+* change blog thumbs when screen resize
+*/
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadAppropriateBlogThumb();
+    loadAppropriatePostThumb();
+})
+
+window.addEventListener('resize', function() {
+    loadAppropriateBlogThumb();
+    loadAppropriatePostThumb();
+})
+
+function loadAppropriateBlogThumb() {
+    var blogThumb = document.querySelectorAll('.blog-thumb')
+    if (blogThumb) {
+        if (document.documentElement.clientWidth <= 450 && document.documentElement.clientWidth > 350) {
+            blogThumb.forEach(function(thumb) {
+                thumb.setAttribute('src', thumb.dataset.md)
+            })
+        } else if (document.documentElement.clientWidth <= 350) {
+            blogThumb.forEach(function(thumb) {
+                thumb.setAttribute('src', thumb.dataset.xs)
+            })
+        } else {
+            blogThumb.forEach(function(thumb) {
+                thumb.setAttribute('src', thumb.dataset.main)
+            })
+        }
+    }
+}
+
+function loadAppropriatePostThumb() {
+    var postThumb = document.querySelector('.post-thumb')
+
+    if (postThumb) {
+        if (document.documentElement.clientWidth <= 868 && document.documentElement.clientWidth > 538) {
+            postThumb.setAttribute('src', postThumb.dataset.lg)
+        } else if (document.documentElement.clientWidth <= 538 && document.documentElement.clientWidth > 400) {
+            postThumb.setAttribute('src', postThumb.dataset.md)
+        } else if (document.documentElement.clientWidth <= 400) {
+            postThumb.setAttribute('src', postThumb.dataset.xs)
+        } else {
+            postThumb.setAttribute('src', postThumb.dataset.main)
+        }
+    }
+}

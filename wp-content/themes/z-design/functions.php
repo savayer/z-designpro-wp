@@ -182,7 +182,8 @@ function z_scripts() {
 			$works = [];
 			foreach ($prependWorks as $work) {
 				$id = $work->ID;
-				$media = [];
+				$media = [];				
+				//dd(get_field('work_images', 21));
 				foreach (get_field('work_images', $id) as $image) {
 					$media[] = array(
 						'work_image' => wp_get_attachment_image_url($image['work_image'], 'full'),
@@ -191,7 +192,7 @@ function z_scripts() {
 						'work_image_xs' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-xs'),
 						'youtube_link' => $image['youtube_link']
 					);
-				}				
+				}
 				$works[] = array(
 					'id' => $id,
 					'name' => $work->post_title,
@@ -204,7 +205,6 @@ function z_scripts() {
 					'media' => $media
 				);
 			}
-			//dd($works);
 			$data = array(
 				'cats' => $categories,
 				'works' => $works
@@ -335,4 +335,9 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'portfolio-thumb-md', 440, 9999 );
 	add_image_size( 'portfolio-thumb-lg', 700, 9999 );
 	add_image_size( 'blog-thumb', 578, 9999 );
+	add_image_size( 'blog-thumb-md', 450, 9999 );
+	add_image_size( 'blog-thumb-xs', 350, 9999 );
+	add_image_size( 'post-thumb-lg', 868, 9999 );
+	add_image_size( 'post-thumb-md', 538, 9999 );
+	add_image_size( 'post-thumb-xs', 400, 9999 );
 }

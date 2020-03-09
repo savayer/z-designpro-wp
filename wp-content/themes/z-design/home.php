@@ -33,7 +33,11 @@
 					<div class="post__wrapper">
 						<div class="post__image">
 							<a href="<?php echo $link; ?>">
-								<img src="<?php echo get_the_post_thumbnail_url($post->ID, 'blog-thumb'); ?>" alt="<?php echo $post->post_title; ?>">
+								<img class="blog-thumb" src="<?php echo get_the_post_thumbnail_url($post->ID, 'blog-thumb'); ?>" 
+									data-main="<?php echo get_the_post_thumbnail_url($post->ID, 'blog-thumb'); ?>"
+									data-md="<?php echo get_the_post_thumbnail_url($post->ID, 'blog-thumb-md'); ?>"
+									data-xs="<?php echo get_the_post_thumbnail_url($post->ID, 'blog-thumb-xs'); ?>"
+									alt="<?php echo $post->post_title; ?>">
 							</a>
 						</div>
 						<div class="post__content">
