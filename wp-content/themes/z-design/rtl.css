@@ -19,6 +19,10 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
     src: url('fonts/Reforma/FbReforma-Regular.otf') format('opentype');
 }
 @font-face {
+    font-family: 'FB Reforma Regular';
+    src: url('fonts/Reforma/FbReforma-Regular.otf') format('opentype');
+}
+@font-face {
     font-family: 'FB Reforma Medium';
     src: url('fonts/Reforma/FbReforma-Medium.otf') format('opentype');
 }
@@ -256,15 +260,15 @@ form.wpcf7-form {
     font-family: 'FB Reforma Medium';
 }
 .post__readmore {
-	font-family: 'Open-Sans-Hebrew';
+    font-family: 'FB Reforma Regular';
 }
 .post__readmore span {
-    background: url(img/svg/red_arrow_left.svg) center/contain no-repeat;    
+    background: url(img/svg/red_arrow_left.svg) center/contain no-repeat;
     margin-left: 0;
-	margin-right: .5rem;
-	width: 25px;
-	height: 14px;
-	vertical-align: baseline;
+    margin-right: .5rem;
+    width: 22px;
+    height: 12px;
+	vertical-align: middle;
 }
 .post__readmore:hover span {
     -webkit-transform: translate3d(-4px, 0, 0);
