@@ -93,7 +93,7 @@ div.wpcf7-mail-sent-ok {
     border: none;
     text-align: center;
     color: #f14359;
-    font-size: 1.125em;
+    font-size: 1em;
     font-family: 'Open Sans';
 }
 
@@ -244,4 +244,31 @@ li#menu-item-65 a strong {
 
 .order_here a {
     transition: .1s linear;
+}
+
+@media (min-width: 769px) {
+	.nav--home {
+		min-height: 132px;	
+	}	
+
+	.nav--home .logo {
+		margin: auto;
+		position: absolute;
+			max-width: 450px;
+		left: 0;
+		right: 0;
+		text-align: center;
+	}
+}
+.contact__button button {
+    transition: .2s;
+}
+.contact__button button:focus {
+    background: #f05b6e;
+}
+.contact__button button:hover {
+    background: #da5364;
+}
+.contact__button button:active {
+    background: #f16b7c;
 }

@@ -125,3 +125,57 @@ function loadAppropriatePostThumb() {
         }
     }
 }
+
+/************************************** */
+/*
+* detect form errors
+*/
+if (document.documentElement.clientWidth > 500) {
+    var nameInput = document.querySelector('input[name="your-name"]')
+    var telInput = document.querySelector('input[name="your-phone"]')
+    var emailInput = document.querySelector('input[name="your-email"]')
+} else {
+    var nameInput = document.querySelectorAll('input[name="your-name"]')[1]
+    var telInput = document.querySelectorAll('input[name="your-phone"]')[1]
+    var emailInput = document.querySelectorAll('input[name="your-email"]')[1]
+}
+
+if (telInput) {
+
+    nameInput.addEventListener('input', function() {
+        if (!this.value) {
+            this.closest('.contact__group').querySelector('.field_label').classList.add('wpcf7-not-valid')
+            this.classList.add('wpcf7-not-valid')
+        } else {
+            this.classList.remove('wpcf7-not-valid')
+            this.closest('.contact__group').querySelector('.field_label').classList.remove('wpcf7-not-valid')
+        }
+    })
+
+    telInput.addEventListener('input', function(e) {
+        if (/\D/.test(this.value)) {
+            this.closest('.contact__group').querySelector('.field_label').classList.add('wpcf7-not-valid')
+            this.classList.add('wpcf7-not-valid')
+        } else {
+            this.classList.remove('wpcf7-not-valid')
+            this.closest('.contact__group').querySelector('.field_label').classList.remove('wpcf7-not-valid')
+        }
+    })
+
+
+    function validateEmail(email) {
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    }
+
+    emailInput.addEventListener('input', function() {
+        if (validateEmail(this.value)) {
+            this.classList.remove('wpcf7-not-valid')
+            this.closest('.contact__group').querySelector('.field_label').classList.remove('wpcf7-not-valid')
+        } else {
+            this.closest('.contact__group').querySelector('.field_label').classList.add('wpcf7-not-valid')
+            this.classList.add('wpcf7-not-valid')
+        }
+    })
+}
+

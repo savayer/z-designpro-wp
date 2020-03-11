@@ -160,7 +160,10 @@ div.wpcf7-mail-sent-ok {
     text-align: center;
     color: #f14359;
     font-family: 'Open-Sans-Hebrew';
-    font-size: 1.125em;
+    font-size: 1em;
+}
+div.wpcf7-mail-sent-ng, div.wpcf7-aborted {
+    font-family: 'Open-Sans-Hebrew';
 }
 form.wpcf7-form {
     direction: rtl;
