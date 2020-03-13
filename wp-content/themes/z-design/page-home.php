@@ -122,9 +122,14 @@ get_header();
                 <img v-if="document.documentElement.clientWidth > 700"
                     v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                 <img v-else v-lazy="item.work_image_lg" lazy="loading" :alt="`${projectName} screen ${index+1}`">
-                <iframe v-if="item.youtube_link" :src="item.youtube_link" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <div v-if="item.youtube_link">
+                    <iframe  v-if="!isMp4(item.youtube_link)" :src="item.youtube_link" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <video v-else="isMp4(item.youtube_link)" class="video-fluid z-depth-1" autoplay loop controls muted>
+                        <source :src="item.youtube_link" type="video/mp4" />
+                    </video>
+                </div>
             </div>
 
             <div v-for="objMediaInfo, index in projectMediaAll" :key="index">
@@ -138,9 +143,14 @@ get_header();
                             v-lazy="item.work_image_xs" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                         <img v-else
                             v-lazy="item.work_image_lg" lazy="loading" :alt="`${projectName} screen ${index+1}`">
-                        <iframe v-if="item.youtube_link" :src="item.youtube_link" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                        <div v-if="item.youtube_link">
+                            <iframe  v-if="!isMp4(item.youtube_link)" :src="item.youtube_link" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <video v-else="isMp4(item.youtube_link)" class="video-fluid z-depth-1" autoplay loop controls muted>
+                                <source :src="item.youtube_link" type="video/mp4" />
+                            </video>
+                        </div>
                     </div>
                 </div>
             </div>

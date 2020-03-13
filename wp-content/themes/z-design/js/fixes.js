@@ -148,9 +148,9 @@ if (telInput) {
             this.classList.add('wpcf7-not-valid')
             this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'block'
         } else {
-            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'none'
             this.classList.remove('wpcf7-not-valid')
             this.closest('.contact__group').querySelector('.field_label').classList.remove('wpcf7-not-valid')
+            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'none'
         }
     })
 
@@ -158,11 +158,14 @@ if (telInput) {
         if (/[^0-9-]/.test(this.value)) {
             this.closest('.contact__group').querySelector('.field_label').classList.add('wpcf7-not-valid')            
             this.classList.add('wpcf7-not-valid')
-            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'block'
         } else {
             this.classList.remove('wpcf7-not-valid')
-            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'none'
             this.closest('.contact__group').querySelector('.field_label').classList.remove('wpcf7-not-valid')
+        }
+        if (!this.value) {
+            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'block'
+        } else {
+            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'none'            
         }
     })
 
@@ -181,6 +184,11 @@ if (telInput) {
             this.closest('.contact__group').querySelector('.field_label').classList.add('wpcf7-not-valid')
             this.classList.add('wpcf7-not-valid')
             this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'block'
+        }
+        if (!this.value) {
+            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'block'
+        } else {
+            this.closest('.contact__group').querySelector('.wpcf7-not-valid-tip').style.display = 'none'            
         }
     })
 }
