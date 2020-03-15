@@ -197,13 +197,21 @@ li#menu-item-65 a strong {
         height: 2.125em;        
     }
 }
-.nav__toggle_lang {
+
+.nav__lang_wrapper:hover {
+    -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* .nav__toggle_lang {
     transition: .2s;
 }
 .nav__lang_wrapper:hover .nav__toggle_lang {
     box-shadow: 2px 3px 6px #504f4f;
 }
-
+ */
 .nav__lang_wrapper.hover .flipper {
     transform: rotateY(180deg);
 }

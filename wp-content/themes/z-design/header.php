@@ -18,20 +18,7 @@
 ">
     <?php if (is_page_template('page-home.php')) : ?>
         <div class="preloader">
-            <div class="lds-spinner">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+            <div></div>
         </div>
     <div class="internet-explorer ie" id="internet-explorer">
         <div class="ie__content">
