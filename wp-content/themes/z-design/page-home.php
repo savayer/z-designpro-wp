@@ -162,7 +162,8 @@ get_header();
             <masonry :cols="{default: 3, 992: 2, 576: 1}" :column-class="'m-minus-top'">
                 <div class="grid_works__item" v-for="(work, index) in filtered" :key="work.id">
                     <a href="#view_project" class="grid_works__link" @click.prevent="popupProjectToggle(index)">
-                        <img v-if="document.documentElement.clientWidth > 500" :src="work.image" :alt="work.name">
+                        <img v-if="work.image_gif" :src="work.image_gif" :alt="work.name">
+                        <img v-else-if="document.documentElement.clientWidth > 500" :src="work.image" :alt="work.name">
                         <img v-else-if="document.documentElement.clientWidth <= 500 && document.documentElement.clientWidth > 400" 
                                 :src="work.image_md" :alt="work.name">
                         <img v-else :src="work.image_xs" :alt="work.name">

@@ -192,18 +192,35 @@ function z_scripts() {
 						'work_image_xs' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-xs'),
 						'youtube_link' => $image['youtube_link']
 					);
+				}				
+				$urlImage = get_the_post_thumbnail_url($id, 'full');
+				$isGif =  strpos($urlImage, '.gif');
+				if ($isGif) {
+					$works[] = array(
+						'id' => $id,
+						'name' => $work->post_title,
+						'site' => get_field('go_to_site_link', $id),
+						'category' => 'w-'.get_the_category($id)[0]->slug,
+						'description' => get_field('work_description', $id),
+						'image_gif' => $urlImage,
+						'image' => get_the_post_thumbnail_url($id, 'portfolio-thumb'),
+						'image_xs' => get_the_post_thumbnail_url($id, 'portfolio-thumb-xs'),
+						'image_md' => get_the_post_thumbnail_url($id, 'portfolio-thumb-md'),
+						'media' => $media
+					);
+				} else {
+					$works[] = array(
+						'id' => $id,
+						'name' => $work->post_title,
+						'site' => get_field('go_to_site_link', $id),
+						'category' => 'w-'.get_the_category($id)[0]->slug,
+						'description' => get_field('work_description', $id),
+						'image' => get_the_post_thumbnail_url($id, 'portfolio-thumb'),
+						'image_xs' => get_the_post_thumbnail_url($id, 'portfolio-thumb-xs'),
+						'image_md' => get_the_post_thumbnail_url($id, 'portfolio-thumb-md'),
+						'media' => $media
+					);
 				}
-				$works[] = array(
-					'id' => $id,
-					'name' => $work->post_title,
-					'site' => get_field('go_to_site_link', $id),
-					'category' => 'w-'.get_the_category($id)[0]->slug,
-					'description' => get_field('work_description', $id),
-					'image' => get_the_post_thumbnail_url($id, 'portfolio-thumb'),
-					'image_xs' => get_the_post_thumbnail_url($id, 'portfolio-thumb-xs'),
-					'image_md' => get_the_post_thumbnail_url($id, 'portfolio-thumb-md'),
-					'media' => $media
-				);
 			}
 			$data = array(
 				'cats' => $categories,
