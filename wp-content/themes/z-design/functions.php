@@ -185,13 +185,26 @@ function z_scripts() {
 				$media = [];				
 				//dd(get_field('work_images', 21));
 				foreach (get_field('work_images', $id) as $image) {
-					$media[] = array(
-						'work_image' => wp_get_attachment_image_url($image['work_image'], 'full'),
-						'work_image_lg' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-lg'),
-						'work_image_md' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-md'),
-						'work_image_xs' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-xs'),
-						'youtube_link' => $image['youtube_link']
-					);
+					$urlImage = wp_get_attachment_image_url($image['work_image'], 'full');
+					$isGif =  strpos($urlImage, '.gif');
+					if ($isGif) {
+						$media[] = array(
+							'work_image' => $urlImage,
+							'work_image_gif' => $urlImage,
+							'work_image_lg' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-lg'),
+							'work_image_md' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-md'),
+							'work_image_xs' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-xs'),
+							'youtube_link' => $image['youtube_link']
+						);
+					} else {
+						$media[] = array(
+							'work_image' => wp_get_attachment_image_url($image['work_image'], 'full'),
+							'work_image_lg' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-lg'),
+							'work_image_md' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-md'),
+							'work_image_xs' => wp_get_attachment_image_url($image['work_image'], 'portfolio-thumb-xs'),
+							'youtube_link' => $image['youtube_link']
+						);
+					}
 				}				
 				$urlImage = get_the_post_thumbnail_url($id, 'full');
 				$isGif =  strpos($urlImage, '.gif');

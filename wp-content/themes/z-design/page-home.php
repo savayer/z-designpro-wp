@@ -119,7 +119,8 @@ get_header();
         </div>
         <div class="work__body" :class="{'hide': hiddenBody}">
             <div v-for="item, index in projectMedia" :key="index">
-                <img v-if="document.documentElement.clientWidth > 700"
+                <img v-if="item.work_image_gif" :src="item.work_image_gif" :alt="`${projectName} screen ${index+1}`">
+                <img v-else-if="document.documentElement.clientWidth > 700"
                     v-lazy="item.work_image" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                 <img v-else v-lazy="item.work_image_lg" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                 <div v-if="item.youtube_link">
@@ -137,14 +138,15 @@ get_header();
                 :data-site="objMediaInfo.site"
                     :data-description="objMediaInfo.description">
                     <div v-for="item, i in objMediaInfo.media" :key="i">
-                        <img v-if="document.documentElement.clientWidth <= 440 && document.documentElement.clientWidth > 350"
+                        <img v-if="item.work_image_gif" :src="item.work_image_gif" :alt="`${projectName} screen ${index+1}`">
+                        <img v-else-if="document.documentElement.clientWidth <= 440 && document.documentElement.clientWidth > 350"
                             v-lazy="item.work_image_md" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                         <img v-else-if="document.documentElement.clientWidth < 350"
                             v-lazy="item.work_image_xs" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                         <img v-else
                             v-lazy="item.work_image_lg" lazy="loading" :alt="`${projectName} screen ${index+1}`">
                         <div v-if="item.youtube_link">
-                            <iframe  v-if="!isMp4(item.youtube_link)" :src="item.youtube_link" frameborder="0"
+                            <iframe  v-if="!isMp4(item.youtube_link)" :src="item.youtube_link+'?autoplay=1'" frameborder="0"
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
                             <video v-else="isMp4(item.youtube_link)" class="video-fluid z-depth-1" autoplay loop controls muted>
