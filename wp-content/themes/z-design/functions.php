@@ -276,8 +276,8 @@ add_action( 'init', 'portfolio_post_type' );
 
 class MyWalker extends Walker_Nav_Menu
 {
-
-	function start_el(&$output, $item, $depth, $args)
+	
+	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 )	
 	{
     	global $wp_query;
         $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
